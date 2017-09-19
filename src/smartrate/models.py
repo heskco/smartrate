@@ -83,16 +83,13 @@ class TransManager(models.Manager):
                 self.contract = x
                 self.value = (x.base_rate * delta)
                 self.comission = 200
-                print("value")
-                print(self.value)
                 break
                 
         
         self.booking = booking
         
         self.trans_date = datetime.datetime.now()
-        print("value")
-        print(self.value)
+        
         transaction = self.create(contract=self.contract, booking=self.booking, value=self.value,
                                   comission=200, trans_date=self.trans_date)
         return transaction
